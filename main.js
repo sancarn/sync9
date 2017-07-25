@@ -16,11 +16,11 @@ var unzip	  = require('unzip-stream')
 
 var macKeys;
 var injection;
-fs.readFile('macKeys.js', 'utf8', function(err, data) {
+fs.readFile(pLib.join('libs','macKeys.js'), 'utf8', function(err, data) {
 	if (err) throw err;
 	macKeys = data
 });
-fs.readFile('injection.js', 'utf8', function(err, data) {
+fs.readFile(pLib.join('libs','injection.js'), 'utf8', function(err, data) {
 	if (err) throw err;
 	injection = data.replace("MACKEYS", macKeys);
 });

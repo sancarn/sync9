@@ -1,2 +1,3 @@
 ExitElectron.exe
+cd ..
 electron . 
