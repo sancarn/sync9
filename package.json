@@ -6,7 +6,8 @@
   "dependencies": {
 	"tar.gz":"*",
 	"unzip-stream":"*",
-	"electron-localshortcut":"*"
+	"electron-localshortcut":"*",
+	"fs-extra":"*",
   },
   "devDependencies": {},
   "scripts": {
