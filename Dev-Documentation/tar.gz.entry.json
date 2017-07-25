@@ -1,0 +1,108 @@
+//***********
+//*	Example *
+//***********
+Entry {
+  domain: null,
+  _events: { data: [Function], pause: [Function], resume: [Function] },
+  _eventsCount: 3,
+  _maxListeners: undefined,
+  readable: true,
+  writable: true,
+  _needDrain: false,
+  _paused: false,
+  _reading: false,
+  _ending: false,
+  _ended: false,
+  _remaining: 0,
+  _abort: false,
+  _queue: [],
+  _index: 0,
+  _queueLen: 0,
+  _read: [Function: bound ],
+  props:
+   { path: 'workspace/',
+     mode: 493,
+     uid: 1000,
+     gid: 1000,
+     size: 0,
+     mtime: 2017-07-05T20:08:33.000Z,
+     cksum: 5440,
+     type: '5',
+     linkpath: '',
+     ustar: false
+   },
+  _header:
+   { block: <Buffer 77 6f 72 6b 73 70 61 63 65 2f 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ... >,
+     cksumValid: true,
+     path: 'workspace/',
+     mode: 493,
+     uid: 1000,
+     gid: 1000,
+     size: 0,
+     mtime: 1499285313,
+     cksum: 5440,
+     type: '5',
+     linkpath: '',
+     ustar: false },
+  _extended: {},
+  _global: {},
+  type: 'Directory',
+  path: 'workspace/',
+  size: 0,
+  meta: false 
+}
+
+//File
+
+Entry {
+	  domain: null,
+	  _events: { data: [Function], pause: [Function], resume: [Function] },
+	  _eventsCount: 3,
+	  _maxListeners: undefined,
+	  readable: true,
+	  writable: true,
+	  _needDrain: false,
+	  _paused: false,
+	  _reading: false,
+	  _ending: false,
+	  _ended: false,
+	  _remaining: 413,
+	  _abort: false,
+	  _queue: [],
+	  _index: 0,
+	  _queueLen: 0,
+	  _read: [Function: bound ],
+	  props:
+	   { path: 'workspace/README.md',
+	     mode: 420,
+	     uid: 1000,
+	     gid: 1000,
+	     size: 413,
+	     mtime: 2017-07-05T20:40:20.000Z,
+	     cksum: 6141,
+	     type: '0',
+	     linkpath: '',
+	     ustar: false },
+	  _header:
+	   { block: <Buffer 77 6f 72 6b 73 70 61 63 65 2f 52 45 41 44 4d 45 2e 6d 64 00
+	00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+	 00 00 00 ... >,
+	     cksumValid: true,
+	     path: 'workspace/README.md',
+	     mode: 420,
+	     uid: 1000,
+	     gid: 1000,
+	     size: 413,
+	     mtime: 1499287220,
+	     cksum: 6141,
+	     type: '0',
+	     linkpath: '',
+	     ustar: false },
+	  _extended: {},
+	  _global: {},
+	  type: 'File',
+	  path: 'workspace/README.md',
+	  size: 413,
+	  meta: false
+	}

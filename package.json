@@ -1,0 +1,17 @@
+{
+  "name": "c9-sync",
+  "version": "1.0.0",
+  "description": "Syncronise your online C9 files with your offline desktop files.",
+  "main": "main.js",
+  "dependencies": {
+	"tar.gz":"*",
+	"unzip-stream":"*",
+	"electron-localshortcut":"*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Warren, Tar van Krieken",
+  "license": "MIT"
+}

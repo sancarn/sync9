@@ -1,0 +1,41 @@
+{
+  "filter": false,
+  "title": "Excel-HTML.cs",
+  "tooltip": "\/C#\/Excel-HTML.cs",
+  "undoManager": {
+    "mark": -1,
+    "position": -1,
+    "stack": [
+      
+    ]
+  },
+  "ace": {
+    "folds": [
+      
+    ],
+    "scrolltop": 0,
+    "scrollleft": 0,
+    "selection": {
+      "start": {
+        "row": 0,
+        "column": 0
+      },
+      "end": {
+        "row": 0,
+        "column": 0
+      },
+      "isBackwards": true
+    },
+    "options": {
+      "guessTabSize": true,
+      "useWrapMode": false,
+      "wrapToView": true
+    },
+    "firstLineState": {
+      "row": 282,
+      "mode": "ace\/mode\/csharp"
+    }
+  },
+  "timestamp": 1498405247705,
+  "hash": "2066825de22bad68684fc21b8f55944b949f6317"
+}
