@@ -16,6 +16,7 @@ var unzip	  = require('unzip-stream')
 
 var macKeys;
 var injection;
+var injectionFileWatchers;
 fs.readFile(pLib.join('libs','macKeys.js'), 'utf8', function(err, data) {
 	if (err) throw err;
 	macKeys = data
@@ -24,6 +25,11 @@ fs.readFile(pLib.join('libs','injection.js'), 'utf8', function(err, data) {
 	if (err) throw err;
 	injection = data.replace("MACKEYS", macKeys);
 });
+fs.readFile(pLib.join('libs','injectFileWatchers.js'),'utf8', function(err,data){
+	if (err) throw err;
+	injectionFileWatchers = data
+})
+
 
 if(!fs.existsSync(pLib.join(__dirname,"workspaces"))){
 	fs.mkdir(pLib.join(__dirname,"workspaces"),function(){})
@@ -60,7 +66,7 @@ app.on('ready', function(){
 	c9Window.webContents.on('new-window', function(event, url){
 		event.preventDefault();
 		c9Window.loadURL(url);
-		
+		console.log("Loading: " + url)
 		//add url check here
 		c9Window.webContents.on('dom-ready', function (e){
 			c9Window.webContents.executeJavaScript(injection);
@@ -73,6 +79,17 @@ app.on('ready', function(){
 			sync9.local_dir = pLib.join(__dirname, 'Workspaces', sync9.projTitle)
 		});
 	});
+	c9Window.webContents.on('did-fail-load',function(event,errCode,errDescription,validatedURL,isMainFrame){
+		console.log("Couldn't load url due to error " + errCode + ": " + errDescription)
+		c9Window.webContents.session.clearStorageData()
+		c9Window.loadURL(validatedURL);
+	})
+	c9Window.webContents.on('did-get-redirect-request', function(event,oldUrl,newUrl, isMainFrame,httpResponseCode,requestMethod,referrer,headers){
+		console.log("redirecting...")
+	})
+	c9Window.webContents.on('did-navigate', function(){
+		console.log("did navigate")
+	})
 	
 	var webRequest = c9Window.webContents.session.webRequest
 	var filter = {
@@ -117,6 +134,10 @@ ipc.on("saveFile",function(event, arg){
 sync9.onCapturedInitURL = function(){
 	var counter = 0
 	var CloudList, C9TimeStampObject, LocalTimeStampObject;
+	
+	//Inject file watchers to window
+	sync9.injectFileWatchers()
+	
 	sync9.getCloudFileListNoMetadata(function(data){
 		//Do stuff with    CloudFileList
 		/* Example:
@@ -502,6 +523,14 @@ function downloadSingleFolder(cloudPath, localPath, callback){
 		callback()
 	})
 }
+
+
+sync9.injectFileWatchers = function(){
+	c9Window.webContents.executeJavaScript(injectionFileWatchers);
+}
+
+
+
 
 /*
  * THINGS THAT NEED CHANGING:

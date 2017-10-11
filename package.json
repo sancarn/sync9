@@ -7,7 +7,7 @@
 	"tar.gz":"*",
 	"unzip-stream":"*",
 	"electron-localshortcut":"*",
-	"fs-extra":"*",
+	"fs-extra":"*"
   },
   "devDependencies": {},
   "scripts": {

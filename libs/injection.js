@@ -1,6 +1,9 @@
 //setup ipc
 var ipc = require('electron').ipcRenderer;
 
+//setup late binding for require with node.
+window.node_require = require
+
 //setup jquery
 window.$ = window.jQuery = require('jquery');
 
@@ -220,5 +223,6 @@ var interval = setInterval(function(){
 		fileButton.mousedown();
 		fileButton.mousedown();
 		*/
+		
 	}
 });
